@@ -6,11 +6,12 @@
 //
 
 #import "NativeMessageModule.h"
-#import <React-Codegen/NativeMessageModule.h>
 
 @implementation NativeMessageModule {
   BOOL hasListeners;
 }
+
+RCT_EXPORT_MODULE();
 
 + (BOOL)requiresMainQueueSetup {
   return YES;
@@ -30,24 +31,24 @@
   hasListeners = NO;
 }
 
-- (void)sendMessage:(NSString *)message {
+RCT_EXPORT_METHOD(sendMessage:(NSString *)message) {
   NSLog(@"[iOS] Received from JS: %@", message);
 }
 
-- (void)getMessage:(RCTPromiseResolveBlock)resolve
-                  rejecter:(RCTPromiseRejectBlock)reject {
+RCT_EXPORT_METHOD(getMessage:(RCTPromiseResolveBlock)resolve
+                  rejecter:(RCTPromiseRejectBlock)reject) {
   NSString *response = @"Hello from iOS";
   NSLog(@"[iOS] Returning to JS (Promise): %@", response);
   resolve(response);
 }
 
-- (void)sendWithCallback:(RCTResponseSenderBlock)callback {
+RCT_EXPORT_METHOD(sendWithCallback:(RCTResponseSenderBlock)callback) {
   NSString *response = @"Hello from iOS";
   NSLog(@"[iOS] Returning to JS (Callback): %@", response);
   callback(@[response]);
 }
 
-- (void)startSendingEvents {
+RCT_EXPORT_METHOD(startSendingEvents) {
   if (!hasListeners) {
     NSLog(@"[iOS] No listeners, not sending events");
     return;
@@ -61,12 +62,6 @@
       [self sendEventWithName:@"onTimerTick" body:@{@"message": msg}];
     });
   }
-}
-
-- (std::shared_ptr<facebook::react::TurboModule>)getTurboModule:
-    (const facebook::react::ObjCTurboModule::InitParams &)params
-{
-    return std::make_shared<facebook::react::NativeMessageModuleSpecJSI>(params);
 }
 
 @end
