@@ -35,5 +35,18 @@
   },
   "engines": {
     "node": ">=18"
+  },
+  "codegenConfig": {
+    "name": "NativeMessageModule",
+    "type": "modules",
+    "jsSrcsDir": "specs",
+    "android": {
+      "javaPackageName": "com.newarchitecturebridge"
+    },
+    "ios": {
+      "modulesProvider": {
+        "NativeMessageModule": "NativeMessageModule"
+      }
+    }
   }
 }
