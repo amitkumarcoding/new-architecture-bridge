@@ -49,6 +49,7 @@
 				B2160B812E06EF4300A1B0E7 /* NativeMessageModule */,
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
 				761780EC2CA45674006654EE /* AppDelegate.swift */,
+				B2160B822E06EF5D00A1B0E7 /* newArchitectureBridge-Bridging-Header.h */,
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */,
 				13B07FB81A68108700A75B9A /* PrivacyInfo.xcprivacy */,
@@ -99,7 +100,6 @@
 			children = (
 				B2160B832E06EF5D00A1B0E7 /* NativeMessageModule.h */,
 				B2160B842E06EF5D00A1B0E7 /* NativeMessageModule.mm */,
-				B2160B822E06EF5D00A1B0E7 /* newArchitectureBridge-Bridging-Header.h */,
 			);
 			path = NativeMessageModule;
 			sourceTree = "<group>";
@@ -291,7 +291,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = newArchitectureBridge;
-				SWIFT_OBJC_BRIDGING_HEADER = "NativeMessageModule/newArchitectureBridge-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "newArchitectureBridge-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -319,7 +319,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = newArchitectureBridge;
-				SWIFT_OBJC_BRIDGING_HEADER = "NativeMessageModule/newArchitectureBridge-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "newArchitectureBridge-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
